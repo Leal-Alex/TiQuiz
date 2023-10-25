@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+header {
+    text-align: center;
+    font-size: 24px;
+    color: #df2626; /* Cor do título */
+}
+
+
+.botao {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px
+}
+
+.botao:hover,
+.botao:focus {
+    background-color: #ff5733;
+    color: #fff;
+}
+
+
+
+footer {
+    text-align: center;
+    font-size: 16px;
+    color: #000000; /* Cor do texto do rodapé */
+}
