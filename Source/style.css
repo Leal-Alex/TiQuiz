@@ -1,3 +1,19 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
 body, h1, p {
     margin: 0;
     padding: 0;
@@ -37,6 +53,23 @@ header {
 .botao:hover {
     background-color: #e63900;
     transform: scale(1.1);
+}
+
+.alternativa {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.alternativa:hover {
+    background-color: #e63900;
+    transform: scale(1.2);
 }
 
 footer {

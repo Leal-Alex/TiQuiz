@@ -13,12 +13,35 @@ const perguntas = [
     },
     // Adicione mais perguntas aqui...
 ];
+
 // Obtém elementos HTML
 const perguntaElement = document.getElementById('pergunta');
 const imagemElement = document.getElementById('imagem');
 const alternativasElement = document.getElementById('alternativas');
+const botaoJogar = document.getElementById('jogar');
+const perguntaContainer = document.querySelector('.pergunta-container');
+
+botaoJogar.addEventListener('click', function() {
+    // Oculta a tela inicial
+    this.parentElement.style.display = 'none';
+
+    // Mostra a tela das perguntas
+    perguntaContainer.style.display = 'block';
+
+    // Inicie o jogo
+    mostrarProximaPergunta();
+});
 
 let perguntaAtual = 0; // Índice da pergunta atual
+
+embaralharPerguntas(perguntas);
+
+function embaralharPerguntas(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 // Função para exibir a próxima pergunta
 function mostrarProximaPergunta() {
@@ -37,14 +60,13 @@ function mostrarProximaPergunta() {
         pergunta.alternativas.forEach((alternativa) => {
             const botao = document.createElement('button');
             botao.textContent = alternativa;
+            botao.className = 'alternativa'; // Adicione a classe 'alternativa'
 
             // Adiciona um evento de clique para verificar a resposta
             botao.addEventListener('click', () => verificarResposta(alternativa));
 
             alternativasElement.appendChild(botao);
         });
-
-        perguntaAtual++;
     } else {
         // Fim do jogo
         perguntaElement.textContent = 'Fim do Jogo';
@@ -55,7 +77,7 @@ function mostrarProximaPergunta() {
 
 // Função para verificar a resposta do jogador
 function verificarResposta(resposta) {
-    const pergunta = perguntas[perguntaAtual - 1];
+    const pergunta = perguntas[perguntaAtual];
 
     if (resposta === pergunta.resposta_correta) {
         // Resposta correta
@@ -66,9 +88,7 @@ function verificarResposta(resposta) {
     }
 
     // Mostra a próxima pergunta
+    perguntaAtual++;
     mostrarProximaPergunta();
 }
-
-// Inicie o jogo
-mostrarProximaPergunta();
 
