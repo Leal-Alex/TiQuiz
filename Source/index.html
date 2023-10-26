@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCI - Teste de Conhecimento Interativo</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
-    <body style="background-color: #2d86d3;">
+    <div class="container">
         <header>
-            <h1>TCI</h1>
+            <h1>TCI - Teste de Conhecimento Interativo</h1>
         </header>
-        
+
         <main>
-            <button class="botao" id="jogar">Jogar</button>
-            <button class="botao" id="opcoes">Opções</button>
+            <div class="botoes-container">
+                <button class="botao" id="jogar">Jogar</button>
+                <button class="botao" id="opcoes">Opções</button>
+            </div>
+
+            <div class="pergunta-container">
+                <h2 id="pergunta">Pergunta:</h2>
+                <img id="imagem" src="" alt="Imagem da pergunta">
+                <div id="alternativas" class="alternativas-container">
+                    <!-- As alternativas serão adicionadas dinamicamente via JavaScript -->
+                </div>
+            </div>
         </main>
-        
+
         <footer>
-            <p>Desenvolvido por Diogo Leal &copy; 2023</p>
+            <p>Desenvolvido por [Seu Nome] &copy; 2023</p>
         </footer>
+    </div>
 
     <script src="main.js"></script>
 </body>
