@@ -14,50 +14,74 @@ const perguntas = [
     {
         pergunta: 'Identifique a Imagem',
         imagem: '../imagens_PP/ram.jpg', 
-        alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
-        resposta_correta: 'Memória RAM'
+        alternativas: ['Placa de Video', 'Placa mãe', 'Processador', 'Chipset'],
+        resposta_correta: 'Processador'
     },
     {
         pergunta: 'Identifique a Imagem',
         imagem: '../imagens_PP/placamae.jpg', 
-        alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
-        resposta_correta: 'Placa mãe'
+        alternativas: ['Fonte ATX', 'Water Cooler', 'Placa de Video', 'Processador'],
+        resposta_correta: 'Placa de Video'
     },
     {
         pergunta: 'Identifique a Imagem',
         imagem: '../imagens_PP/ram.jpg', 
         alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
-        resposta_correta: 'Memória RAM'
+        resposta_correta: 'Gabinete'
     },
     {
         pergunta: 'Identifique a Imagem',
         imagem: '../imagens_PP/placamae.jpg', 
-        alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
-        resposta_correta: 'Placa mãe'
+        alternativas: ['Cabo Sata', 'Placa mãe', 'SSD', 'Processador'],
+        resposta_correta: 'SSD'
     },
     {
         pergunta: 'Identifique a Imagem',
         imagem: '../imagens_PP/ram.jpg', 
-        alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
-        resposta_correta: 'Memória RAM'
+        alternativas: ['Fonte ATX', 'Estabilizador', 'Cooler', 'Gabinete'],
+        resposta_correta: 'Fonte ATX'
     },
     {
         pergunta: 'Identifique a Imagem',
         imagem: '../imagens_PP/placamae.jpg', 
-        alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
-        resposta_correta: 'Placa mãe'
+        alternativas: ['Fan', 'Cooler', 'Turbina', 'Processador'],
+        resposta_correta: 'Fan'
     },
     {
         pergunta: 'Identifique a Imagem',
         imagem: '../imagens_PP/ram.jpg', 
-        alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
-        resposta_correta: 'Memória RAM'
+        alternativas: ['VRM', 'Fan', 'Water Cooler', 'Gabinete'],
+        resposta_correta: 'Water Cooler'
     },
     {
-        pergunta: 'Identifique a Imagem',
+        pergunta: 'Identifique o cabo',
         imagem: '../imagens_PP/placamae.jpg', 
-        alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
-        resposta_correta: 'Placa mãe'
+        alternativas: ['USB', 'HDMI', 'DisplayPort', 'SATA'],
+        resposta_correta: 'HDMI'
+    },
+    {
+        pergunta: 'Identifique o cabo',
+        imagem: '../imagens_PP/placamae.jpg', 
+        alternativas: ['USB', 'HDMI', 'DisplayPort', 'SATA'],
+        resposta_correta: 'DisplayPort'
+    },
+    {
+        pergunta: 'Identifique o cabo',
+        imagem: '../imagens_PP/placamae.jpg', 
+        alternativas: ['USB', 'HDMI', 'PS/2', 'SATA'],
+        resposta_correta: 'USB'
+    },
+    {
+        pergunta: 'Identifique o cabo',
+        imagem: '../imagens_PP/placamae.jpg', 
+        alternativas: ['USB', 'HDMI', 'DisplayPort', 'PS/2'],
+        resposta_correta: 'PS/2'
+    },
+    {
+        pergunta: 'Identifique o cabo',
+        imagem: '../imagens_PP/placamae.jpg', 
+        alternativas: ['USB', 'HDMI', 'DisplayPort', 'SATA'],
+        resposta_correta: 'SATA'
     },
     
 ];
