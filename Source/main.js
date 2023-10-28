@@ -26,7 +26,7 @@ const perguntas = [
     {
         pergunta: 'Identifique a Imagem',
         imagem: '../imagens_PP/ram.jpg', 
-        alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
+        alternativas: ['Memória RAM', 'Placa mãe', 'CPU', 'Gabinete'],
         resposta_correta: 'Gabinete'
     },
     {
@@ -82,6 +82,13 @@ const perguntas = [
         imagem: '../imagens_PP/placamae.jpg', 
         alternativas: ['USB', 'HDMI', 'DisplayPort', 'SATA'],
         resposta_correta: 'SATA'
+    },
+    // Abaixo as curiosidades:
+    {
+        pergunta: 'Quem é considerado o "pai da computação"?',
+        imagem:'..',
+        alternativas: ['Steve Wozniak', 'Alan Turing', 'Tim Berners-Lee', ' Steve Jobs'],
+        resposta_correta: 'Alan Turing'
     },
     
 ];
