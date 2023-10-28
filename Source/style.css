@@ -76,3 +76,10 @@ footer {
     font-size: 14px;
     color: #eee;
 }
+
+/* Estilo para a imagem da pergunta */
+#imagem {
+    max-width: 100%; /* Largura máxima da imagem igual à largura do contêiner */
+    max-height: 300px; /* Altura máxima da imagem (ajuste conforme necessário) */
+}
+

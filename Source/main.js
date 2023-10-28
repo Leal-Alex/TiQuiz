@@ -11,7 +11,55 @@ const perguntas = [
         alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
         resposta_correta: 'Placa mãe'
     },
-    // Adicione mais perguntas aqui...
+    {
+        pergunta: 'Identifique a Imagem',
+        imagem: '../imagens_PP/ram.jpg', 
+        alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
+        resposta_correta: 'Memória RAM'
+    },
+    {
+        pergunta: 'Identifique a Imagem',
+        imagem: '../imagens_PP/placamae.jpg', 
+        alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
+        resposta_correta: 'Placa mãe'
+    },
+    {
+        pergunta: 'Identifique a Imagem',
+        imagem: '../imagens_PP/ram.jpg', 
+        alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
+        resposta_correta: 'Memória RAM'
+    },
+    {
+        pergunta: 'Identifique a Imagem',
+        imagem: '../imagens_PP/placamae.jpg', 
+        alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
+        resposta_correta: 'Placa mãe'
+    },
+    {
+        pergunta: 'Identifique a Imagem',
+        imagem: '../imagens_PP/ram.jpg', 
+        alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
+        resposta_correta: 'Memória RAM'
+    },
+    {
+        pergunta: 'Identifique a Imagem',
+        imagem: '../imagens_PP/placamae.jpg', 
+        alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
+        resposta_correta: 'Placa mãe'
+    },
+    {
+        pergunta: 'Identifique a Imagem',
+        imagem: '../imagens_PP/ram.jpg', 
+        alternativas: ['Memória RAM', 'Placa mãe', 'SSD', 'Gabinete'],
+        resposta_correta: 'Memória RAM'
+    },
+    {
+        pergunta: 'Identifique a Imagem',
+        imagem: '../imagens_PP/placamae.jpg', 
+        alternativas: ['Fonte ATX', 'Placa mãe', 'SSD', 'Processador'],
+        resposta_correta: 'Placa mãe'
+    },
+    
 ];
 
 // Obtém elementos HTML
