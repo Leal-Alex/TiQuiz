@@ -1,36 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TCI - Teste de Conhecimento Interativo</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>PiQuiz</title>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>TCI - Teste de Conhecimento Interativo</h1>
-        </header>
-
-        <main>
-            <div class="botoes-container">
-                <button class="botao" id="jogar">Jogar</button>
-                <button class="botao" id="opcoes">Opções</button>
-            </div>
-
-            <div class="pergunta-container">
-                <h2 id="pergunta">Pergunta:</h2>
-                <img id="imagem" src="" alt="Imagem da pergunta">
-                <div id="alternativas" class="alternativas-container">
-                    <!-- As alternativas serão adicionadas dinamicamente via JavaScript -->
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <p>Desenvolvido por Diogo Alex &copy; 2023</p>
-        </footer>
+        <div class="input-container">
+            <input type="text" placeholder="Digite o seu nome">
+        </div>
+        <button class="play-button">Jogar</button>
     </div>
-
-    <script src="main.js"></script>
 </body>
 </html>

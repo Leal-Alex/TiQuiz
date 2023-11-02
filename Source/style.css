@@ -1,85 +1,45 @@
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    
-}
-.container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-body, h1, p {
-    margin: 0;
-    padding: 0;
-}
-
 body {
+    font-family: Arial, sans-serif;
+    background-color: #3b136b;
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: #3498db; /* Cor de fundo */
-    font-family: 'Arial Rounded', sans-serif;
-    color: #fff;
 }
-
 .container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+h1 {
+    color: #0099cc;
+}
+.input-container {
     text-align: center;
 }
-
-header {
-    font-size: 36px;
-    margin-bottom: 20px;
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #0099cc;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center; /* Centraliza o texto dentro do campo */
 }
-
-.botao {
-    background-color: #ff5733;
-    color: #fff;
-    padding: 15px 30px;
+.play-button {
+    background-color: #191d1e;
+    color: white;
     border: none;
-    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
     font-size: 18px;
-    border-radius: 10px;
-    margin: 10px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.botao:hover {
-    background-color: #e63900;
-    transform: scale(1.1);
-}
-
-.alternativa {
-    background-color: #ff5733;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 8px;
-    margin: 10px;
-    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Define o mesmo tamanho que o botão "Jogar" */
 }
-
-.alternativa:hover {
-    background-color: #e63900;
-    transform: scale(1.1);
+.play-button:hover {
+    background-color: #1f2325;
+    padding: 8px 20px;
 }
-
-footer {
-    font-size: 14px;
-    color: #eee;
-}
-
-/* Estilo para a imagem da pergunta */
-#imagem {
-    max-width: 100%; /* Largura máxima da imagem igual à largura do contêiner */
-    max-height: 300px; /* Altura máxima da imagem (ajuste conforme necessário) */
-}
-
