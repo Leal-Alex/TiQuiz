@@ -20,6 +20,7 @@ h1 {
 }
 .input-container {
     text-align: center;
+    padding: 10px 20px;
 }
 input[type="text"] {
     padding: 10px;
