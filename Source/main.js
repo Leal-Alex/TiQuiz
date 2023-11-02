@@ -1,32 +1,36 @@
+// Função para embaralhar um array (usada para embaralhar as perguntas)
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
 const questions = [
     {
         question: "Qual é a capital do Brasil?",
         options: ["Rio de Janeiro", "Brasília", "São Paulo", "Belo Horizonte"],
         answer: 1,
+        image: "brasilia.jpg", 
     },
     {
         question: "Qual é o maior planeta do sistema solar?",
         options: ["Terra", "Marte", "Júpiter", "Vênus"],
         answer: 2,
+        image: "jupiter.jpg", 
     },
     {
         question: "Quem é considerado o pai da computação?",
         options: ["Steve Wozniak", "Alan Turing", "Tim Berners-Lee", "Steve Jobs"],
         answer: 1,
+        image: "../Imagens_PP/alanturing.jpg"
     },
-    
 ];
 
-shuffleArray(questions);
+shuffleArray(questions); // Embaralhar as perguntas
 
 let currentQuestionIndex = 0;
-let timeLeft = 25; // Tempo em segundos
+let timeLeft = 10; // Tempo em segundos
 let timerInterval;
 
 // Função para exibir a pergunta atual
@@ -34,10 +38,12 @@ function showQuestion() {
     clearInterval(timerInterval); // Limpa o temporizador anterior
 
     const questionText = document.querySelector(".question-text");
+    const questionImage = document.querySelector(".question-image"); // Elemento da imagem
     const optionsList = document.querySelector(".options");
     const timeLeftElement = document.getElementById("time-left");
 
     questionText.textContent = questions[currentQuestionIndex].question;
+    questionImage.src = questions[currentQuestionIndex].image; // Define o URL da imagem
     optionsList.innerHTML = "";
 
     questions[currentQuestionIndex].options.forEach((option, index) => {
@@ -48,7 +54,7 @@ function showQuestion() {
         optionsList.appendChild(li);
     });
 
-    timeLeft = 25; // Reinicia o tempo para 10 segundos
+    timeLeft = 10; // Reinicia o tempo para 10 segundos
     timeLeftElement.textContent = timeLeft;
 
     // Iniciar temporizador
