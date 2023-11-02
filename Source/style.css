@@ -10,8 +10,8 @@ body {
 }
 .container {
     background-color: white;
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 20px 50px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -35,12 +35,24 @@ input[type="text"] {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px 70px;
     font-size: 18px;
     cursor: pointer;
-    width: 100%; /* Define o mesmo tamanho que o botão "Jogar" */
+    width: 100%; 
+    text-decoration: none;
 }
 .play-button:hover {
     background-color: #1f2325;
-    padding: 8px 20px;
+    padding: 8px 70px;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3b136b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
 }
