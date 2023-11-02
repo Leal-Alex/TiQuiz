@@ -19,6 +19,7 @@ body {
 }
 
 .title {
+    font-family: "Lobster", cursive;
     font-size: 68px;
     color: #ffffff;
     margin-bottom: 20px;
