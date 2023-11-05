@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080.0001"
+   viewBox="0 0 507.99999 285.75003"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   sodipodi:docname="backgroundgame.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px" /><defs
+     id="defs1" /><g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-2066.4692,-52.853908)"><g
+       id="g1"
+       transform="translate(12.664451,36.842057)"><path
+         id="rect2-7-2"
+         style="fill:#3b136b;stroke-width:5.72569"
+         d="m 2053.8048,16.01185 h 508 v 285.75001 h -508 z" /><path
+         id="rect1"
+         style="fill:#300a5e;fill-opacity:1;stroke-width:2.96846"
+         d="m 2509.7781,120.1543 a 107.97122,107.97122 0 0 0 -107.9713,107.9714 107.97122,107.97122 0 0 0 29.302,73.63616 h 130.696 V 133.54359 a 107.97122,107.97122 0 0 0 -52.0267,-13.38929 z" /><path
+         id="rect2-7"
+         style="fill:#300a5e;fill-opacity:1;stroke-width:11.3416"
+         d="M 2053.8048,16.011848 V 170.02205 l 60.82,50.21861 116.1734,-140.699108 -76.9411,-63.529704 z" /></g></g></svg>
