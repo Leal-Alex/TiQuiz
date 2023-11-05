@@ -13,6 +13,15 @@ body {
     position: relative;
 }
 
+.timer {
+    position: absolute;
+    top: 100px;
+    right: 300px;
+    font-size: 54px;
+    background-color: #273f88;
+    border-radius: 50%;
+}
+
 .question-container {
     text-align: center;
     font-size: 20px;
@@ -31,8 +40,9 @@ body {
 }
 
 .image {
-    max-width: 100%;
+    max-width: 750px;
     max-height: 500px;
+    box-shadow: 10px 10px 15px rgb(0, 0, 0);
 }
 
 .answer-container {
