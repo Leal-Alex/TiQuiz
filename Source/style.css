@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #3b136b;
     display: flex;
-    flex-direction: column; /* Adicione esta linha para alinhar elementos verticalmente */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -78,7 +78,7 @@ input[type="text"] {
     text-align: center;
     padding: 10px;
     font-size: 16px;
-    position: absolute; /* Adicione esta linha */
-    bottom: 0; /* Adicione esta linha */
-    width: 100%; /* Adicione esta linha */
+    position: absolute;
+    bottom: 0; 
+    width: 100%; 
 }
