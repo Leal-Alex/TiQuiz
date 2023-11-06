@@ -19,7 +19,7 @@ const questions = [
         correctAnswer: 'Advanced Micro Devices'
     },
     {
-        image: '/Imagens_PP/processador.jpg',
+        image: '/Imagens_PP/cpu.jpg',
         question: 'O que significa CPU?',
         answers: ['Central Processing Unit', 'Computer Peripheral Unit', 'Central Power Unit', 'Computer Programming Utility'],
         correctAnswer: 'Central Processing Unit'
@@ -61,10 +61,10 @@ const questions = [
         correctAnswer: 'Patinho Feio'
     },
     {
-        image: '/Imagens_PP/primeiragpu.jpg',
+        image: '/Imagens_PP/cooler.jpg',
         question: 'Para que serve o Cooler?',
         answers: ['Para aquecer o computador', 'Para aumentar a luminosidade do monitor', 'Para resfriar componentes, como o processador', 'Para refrigerar bebidas'],
-        correctAnswer: 'Para resfriar componentes eletrônicos, como o processador'
+        correctAnswer: 'Para resfriar componentes, como o processador'
     },
     {
         image: '/Imagens_PP/html.jpg',
@@ -85,37 +85,85 @@ const questions = [
         correctAnswer: 'Uniform Resource Locator'
     },
     {
-        image: '/Imagens_PP/primeiragpu.jpg',
-        question: 'Quando foi lançada a primeira GPU?',
-        answers: ['1980', '1995', '2005', '1972'],
-        correctAnswer: '1972'
+        image: '/Imagens_PP/js.jpg',
+        question: 'Qual é a linguagem de programação mais usada para desenvolvimento de websites?',
+        answers: ['C++', 'JavaScript', 'Excel', 'Python'],
+        correctAnswer: 'JavaScript'
     },
     {
-        image: '/Imagens_PP/primeiragpu.jpg',
-        question: 'Quando foi lançada a primeira GPU?',
-        answers: ['1980', '1995', '2005', '1972'],
-        correctAnswer: '1972'
+        image: '/Imagens_PP/bluetooth.jpg',
+        question: 'O que é Bluetooth?',
+        answers: ['Uma marca de refrigerantes', 'Uma tecnologia de conexão sem fio para dispositivos', 'Um tipo de música', 'Uma rede social'],
+        correctAnswer: 'Uma tecnologia de conexão sem fio para dispositivos'
     },
     {
-        image: '/Imagens_PP/primeiragpu.jpg',
-        question: 'Quando foi lançada a primeira GPU?',
-        answers: ['1980', '1995', '2005', '1972'],
-        correctAnswer: '1972'
+        image: '/Imagens_PP/email.jpg',
+        question: 'O que é um e-mail?',
+        answers: ['Um animal de estimação', 'Uma caixa de correspondências', 'Uma mensagem eletrônica enviada pela internet', 'Um prato de comida'],
+        correctAnswer: 'Uma mensagem eletrônica enviada pela internet'
     },
     {
-        image: '/Imagens_PP/primeiragpu.jpg',
-        question: 'Quando foi lançada a primeira GPU?',
-        answers: ['1980', '1995', '2005', '1972'],
-        correctAnswer: '1972'
+        image: '/Imagens_PP/placamae.jpg',
+        question: 'Identifique a imagem abaixo:',
+        answers: ['Processador', 'Placa Pai', 'Placa Mãe', 'Chipset'],
+        correctAnswer: 'Placa Mãe'
     },
     {
-        image: '/Imagens_PP/primeiragpu.jpg',
-        question: 'Quando foi lançada a primeira GPU?',
-        answers: ['1980', '1995', '2005', '1972'],
-        correctAnswer: '1972'
+        image: '/Imagens_PP/processador.jpg',
+        question: 'Identifique a imagem abaixo:',
+        answers: ['Memória RAM', 'Processador', 'Placa Mãe', 'Chipset'],
+        correctAnswer: 'Processador'
     },
+    {
+        image: '/Imagens_PP/ram.jpg',
+        question: 'Identifique a imagem abaixo:',
+        answers: ['Memória RAM', 'Placa de Video', 'SSD', 'VRM'],
+        correctAnswer: 'Memória RAM'
+    },
+    {
+        image: '/Imagens_PP/gabinete.jpg',
+        question: 'Identifique a imagem abaixo:',
+        answers: ['CPU', 'Gabinete', 'Box', 'PC'],
+        correctAnswer: 'Gabinete'
+    },
+    {
+        image: '/Imagens_PP/fan.png',
+        question: 'Identifique a imagem abaixo:',
+        answers: ['Fan', 'Cooler', 'Ventilador', 'Hélice'],
+        correctAnswer: 'Fan'
+    },
+    {
+        image: '/Imagens_PP/fonteatx.jpg',
+        question: 'Identifique a imagem abaixo:',
+        answers: ['Fonte ATX', 'Estabilizador', 'Condutor elétrico', 'Chipset'],
+        correctAnswer: 'Fonte ATX'
+    },
+    {
+        image: '/Imagens_PP/SSD.jpg',
+        question: 'O que significa SSD?',
+        answers: ['Solid State Driver', 'Sistema de Segurança Digital', 'Serviço de Streaming de Dados', 'Super Sistema de Download'],
+        correctAnswer: 'Solid State Driver'
+    },
+    {
+        image: '/Imagens_PP/watercooler.jpg',
+        question: 'Identifique a imagem abaixo:',
+        answers: ['Processador', 'Air Cooler', 'Water Cooler', 'Cano de Resfriamento'],
+        correctAnswer: 'Water Cooler'
+    },
+    {
+        image: '/Imagens_PP/firewall.jpg',
+        question: 'O que é firewall?',
+        answers: ['Proteção de rede', 'Programa de edição', 'Dispositivo de cozinha', 'Estilo de dança'],
+        correctAnswer: 'Proteção de rede'
+    },
+    {
+        image: '/Imagens_PP/rammemory.jpg',
+        question: 'O que é RAM?',
+        answers: ['Memória de acesso aleatório', 'Rádio AM', 'Refrigerante', 'Moda'],
+        correctAnswer: 'Memória de acesso aleatório'
+    }
 
-    
+  
 ];
 
 // Elementos da DOM
@@ -128,7 +176,7 @@ const playAgainButton = document.getElementById('play-again');
 
 // Variáveis do jogo
 let currentQuestionIndex = 0;
-let timeLeft = 15; // Tempo inicial (15 segundos)
+let timeLeft = 30; // Tempo inicial (15 segundos)
 let timerInterval;
 
 // Função para embaralhar as perguntas
@@ -153,7 +201,7 @@ function loadNextQuestion() {
         }
 
         // Atualizar o temporizador
-        timeLeft = 15;
+        timeLeft = 30;
         timerElement.textContent = timeLeft;
 
         clearInterval(timerInterval);
