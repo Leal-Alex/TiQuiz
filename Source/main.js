@@ -176,7 +176,7 @@ const playAgainButton = document.getElementById('play-again');
 
 // Variáveis do jogo
 let currentQuestionIndex = 0;
-let timeLeft = 30; // Tempo inicial (15 segundos)
+let timeLeft = 30; // Tempo inicial (30 segundos)
 let timerInterval;
 
 // Função para embaralhar as perguntas
