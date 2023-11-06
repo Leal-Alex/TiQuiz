@@ -18,13 +18,12 @@ body {
     top: 100px;
     right: 300px;
     font-size: 54px;
-    background-color: #273f88;
     border-radius: 50%;
 }
 
 .question-container {
     text-align: center;
-    font-size: 20px;
+    font-size: 32px;
     margin-top: 20px;
 }
 
