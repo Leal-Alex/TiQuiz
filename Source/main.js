@@ -173,11 +173,14 @@ const imageContainer = document.querySelector('.image-container');
 const descriptionContainer = document.querySelector('.description-container');
 const answerContainers = document.querySelectorAll('.answer-choice');
 const playAgainButton = document.getElementById('play-again');
+const scoreElement = document.getElementById('score'); 
+
 
 // Variáveis do jogo
 let currentQuestionIndex = 0;
 let timeLeft = 30; // Tempo inicial (30 segundos)
 let timerInterval;
+let score = 0; 
 
 // Função para embaralhar as perguntas
 function shuffleQuestions() {
@@ -229,7 +232,9 @@ function checkAnswer(answer) {
     const currentQuestion = questions[currentQuestionIndex - 1];
 
     if (answer === currentQuestion.correctAnswer) {
-        loadNextQuestion(); // Carrega a próxima pergunta se a resposta for correta
+        score++; // Aumenta o contador de acertos se a resposta for correta
+        scoreElement.textContent = score; // Atualiza o elemento do contador de acertos
+        loadNextQuestion(); // Carrega a próxima pergunta
     } else {
         endGame(); // Encerra o jogo se a resposta estiver errada
     }
