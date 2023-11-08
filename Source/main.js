@@ -260,7 +260,7 @@ function endGame() {
         answerContainers[i].textContent = '';
     }
 
-    styleAndCenterPlayAgainButton();
+    styleAndCenterPlayAgainButton(); //cometarioi
 }
 
 // Evento de clique para jogar novamente
