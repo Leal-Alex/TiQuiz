@@ -16,18 +16,23 @@ body {
 .timer {
     position: absolute;
     top: 100px;
-    right: 300px;
+    right: 250px;
+    width: 240px; /* Defina um tamanho fixo para o elemento .timer */
+    height: 240px; /* Ajuste a altura de acordo com o tamanho da imagem */
     background: url('/Imagens_PP/blackhole.svg') no-repeat;
     background-size: contain;
-    color: #fff;
-    font-size: 54px;
-    padding: 60px;
+    color: #ffffff;
+    font-size: 72px;
+    text-align: center;
+    line-height: 2.9; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
+
 
 .score-container {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 200px;
+    left: 200px;
     background: url('') no-repeat;
     background-size: contain;
     color: #fff;
