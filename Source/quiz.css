@@ -19,7 +19,7 @@ body {
     right: 250px;
     width: 240px; /* Defina um tamanho fixo para o elemento .timer */
     height: 240px; /* Ajuste a altura de acordo com o tamanho da imagem */
-    background: url('/Imagens_PP/blackhole.svg') no-repeat;
+    background: url('../Imagens_PP/blackhole.svg') no-repeat;
     background-size: contain;
     color: #ffffff;
     font-size: 72px;
