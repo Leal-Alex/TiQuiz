@@ -173,121 +173,159 @@ const imageContainer = document.querySelector('.image-container');
 const descriptionContainer = document.querySelector('.description-container');
 const answerContainers = document.querySelectorAll('.answer-choice');
 const playAgainButton = document.getElementById('play-again');
-const scoreElement = document.getElementById('score'); 
-
+const scoreElement = document.getElementById('score');
 
 // Variáveis do jogo
+let currentQuestions = [];
 let currentQuestionIndex = 0;
 let timeLeft = 30; // Tempo inicial (30 segundos)
 let timerInterval;
-let score = 0; 
+let score = 0;
 
 // Função para embaralhar as perguntas
 function shuffleQuestions() {
-    for (let i = questions.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [questions[i], questions[j]] = [questions[j], questions[i]];
-    }
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+}
+
+// Função para carregar as próximas 3 perguntas
+function loadNextQuestions() {
+  currentQuestions = questions.slice(0, 3); // Seleciona as próximas 3 perguntas
+  shuffleQuestions(); // Embaralha todas as perguntas para a próxima rodada
+  loadNextQuestion();
 }
 
 // Função para carregar a próxima pergunta
 function loadNextQuestion() {
-    if (currentQuestionIndex < questions.length) {
-        const currentQuestion = questions[currentQuestionIndex];
+  if (currentQuestionIndex < currentQuestions.length) {
+    const currentQuestion = currentQuestions[currentQuestionIndex];
 
-        questionContainer.innerHTML = `<h2>${currentQuestion.question}</h2>`;
-        imageContainer.innerHTML = `<img class="image" src="${currentQuestion.image}" alt="Imagem da pergunta">`;
-        descriptionContainer.innerHTML = '';
+    questionContainer.innerHTML = `<h2>${currentQuestion.question}</h2>`;
+    imageContainer.innerHTML = `<img class="image" src="${currentQuestion.image}" alt="Imagem da pergunta">`;
+    descriptionContainer.innerHTML = '';
 
-        for (let i = 0; i < answerContainers.length; i++) {
-            answerContainers[i].textContent = currentQuestion.answers[i];
-        }
-
-        // Atualizar o temporizador
-        timeLeft = 30;
-        timerElement.textContent = timeLeft;
-
-        clearInterval(timerInterval);
-        timerInterval = setInterval(updateTimer, 1000);
-
-        currentQuestionIndex++;
-    } else {
-        endGame(); // Encerra o jogo se não houver mais perguntas
+    for (let i = 0; i < answerContainers.length; i++) {
+      answerContainers[i].textContent = currentQuestion.answers[i];
     }
+
+    // Atualizar o temporizador
+    timeLeft = 30;
+    timerElement.textContent = timeLeft;
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(updateTimer, 1000);
+
+    currentQuestionIndex++;
+  } else {
+    endGame(); // Encerra o jogo se não houver mais perguntas
+  }
 }
 
 // Função para atualizar o timer a cada segundo
 function updateTimer() {
-    timeLeft--;
-    timerElement.textContent = timeLeft;
+  timeLeft--;
+  timerElement.textContent = timeLeft;
 
-    if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        endGame(); // Encerra o jogo quando o tempo se esgota
-    }
+  if (timeLeft <= 0) {
+    clearInterval(timerInterval);
+    endGame(); // Encerra o jogo quando o tempo se esgota
+  }
 }
 
 // Função para verificar a resposta selecionada
 function checkAnswer(answer) {
-    const currentQuestion = questions[currentQuestionIndex - 1];
-
+    const currentQuestion = currentQuestions[currentQuestionIndex - 1];
+  
+    let confirmationMessages = [
+      'Correto!',
+      'Impressionante!',
+      'Excelente!',
+      'Você está arrasando!',
+      'Uau, essa foi genial!',
+      'Dessa vez você caprichou!'
+      // Adicione mais mensagens conforme necessário
+    ];
+  
+    let errorMessages = [
+      'Não foi dessa vez!',
+      'Errou, essa estava difícil',
+      'Tente novamente na próxima!',
+      'Você quase acertou!',
+      'Não desanime, continue tentando!'
+      // Adicione mais mensagens conforme necessário
+    ];
+  
+    let confirmationMessage;
+  
     if (answer === currentQuestion.correctAnswer) {
-        score++; // Aumenta o contador de acertos se a resposta for correta
-        scoreElement.textContent = score; // Atualiza o elemento do contador de acertos
-        loadNextQuestion(); // Carrega a próxima pergunta
+      score++; // Aumenta o contador de acertos se a resposta for correta
+      confirmationMessage = confirmationMessages[Math.floor(Math.random() * confirmationMessages.length)];
     } else {
-        endGame(); // Encerra o jogo se a resposta estiver errada
+      confirmationMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
     }
-}
+  
+    // Exibir confirmação
+    descriptionContainer.innerHTML = `<p>${confirmationMessage}</p>`;
+  
+    // Aguardar por alguns segundos antes de carregar a próxima pergunta
+    setTimeout(() => {
+      descriptionContainer.innerHTML = ''; // Limpar a descrição
+      loadNextQuestion();
+    }, 2000); // Tempo em milissegundos (2 segundos)
+  }
+  
 
 // Função para estilizar e centralizar o botão "Tentar Novamente"
 function styleAndCenterPlayAgainButton() {
-    playAgainButton.style.display = 'block';
-    playAgainButton.style.margin = '0 auto';
-    playAgainButton.style.padding = '10px 20px';
-    playAgainButton.style.fontSize = '24px';
+  playAgainButton.style.display = 'block';
+  playAgainButton.style.margin = '0 auto';
+  playAgainButton.style.padding = '10px 20px';
+  playAgainButton.style.fontSize = '24px';
 }
 
 // Função para encerrar o jogo
 function endGame() {
-    clearInterval(timerInterval);
+  clearInterval(timerInterval);
 
-    questionContainer.innerHTML = ''; // Remover a seção da pergunta
-    imageContainer.innerHTML = '';
-    descriptionContainer.innerHTML = 'Fim do Jogo!';
+  questionContainer.innerHTML = ''; // Remover a seção da pergunta
+  imageContainer.innerHTML = '';
+  descriptionContainer.innerHTML = 'Fim do Jogo!';
 
-    for (let i = 0; i < answerContainers.length; i++) {
-        answerContainers[i].textContent = '';
-    }
+  for (let i = 0; i < answerContainers.length; i++) {
+    answerContainers[i].textContent = '';
+  }
 
-    styleAndCenterPlayAgainButton(); 
+  // Verificar pontuação e redirecionar
+  if (score >= 2) {
+    alert('Você ganhou!');
+    window.location.href = 'vencedor.html';
+  } else {
+    alert('Você perdeu!');
+    window.location.href = 'perdedor.html';
+  }
+
+  styleAndCenterPlayAgainButton();
 }
 
 // Evento de clique para jogar novamente
 playAgainButton.addEventListener('click', () => {
-    currentQuestionIndex = 0;
-    shuffleQuestions();
-    loadNextQuestion();
-    descriptionContainer.innerHTML = ''; // Limpar a descrição
-    playAgainButton.style.display = 'none';
+  currentQuestionIndex = 0;
+  score = 0; // Reiniciar pontuação
+  loadNextQuestions();
+  descriptionContainer.innerHTML = ''; // Limpar a descrição
+  playAgainButton.style.display = 'none';
 });
 
 // Evento de clique para respostas
 for (let i = 0; i < answerContainers.length; i++) {
-    answerContainers[i].addEventListener('click', () => {
-        const selectedAnswer = answerContainers[i].textContent;
-        checkAnswer(selectedAnswer);
-    });
+  answerContainers[i].addEventListener('click', () => {
+    const selectedAnswer = answerContainers[i].textContent;
+    checkAnswer(selectedAnswer);
+  });
 }
-
-// Evento de clique para jogar novamente
-playAgainButton.addEventListener('click', () => {
-    currentQuestionIndex = 0;
-    shuffleQuestions();
-    loadNextQuestion();
-    playAgainButton.style.display = 'none';
-});
 
 // Inicialização do jogo
 shuffleQuestions();
-loadNextQuestion();
+loadNextQuestions();
