@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Imagens_PP/decode.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .lost-container {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sad-face {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            color: #f44336;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .back-to-index {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f44336;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .back-to-index:hover{
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(3px);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <title>Você Perdeu</title>
+</head>
+<body>
+    <div class="lost-container">
+        <div class="sad-face">:(</div>
+        <h1>Oh não, <span id="playerName"></span>!</h1>
+        <p>Você não conseguiu concluir o desafio desta vez.</p>
+        <p class="message">Não desanime, continue tentando!</p>
+        <a href="index.html" class="back-to-index">Voltar para o Início</a>
+    </div>
+
+    <footer>
+        <p>Desenvolvido por Diogo Leal - 1° Semestre &copy; 2023</p>
+    </footer>
+
+    <script>
+        // Recuperar nome do jogador do armazenamento local
+        var playerName = localStorage.getItem('playerName');
+
+        // Atualizar o elemento HTML com o nome do jogador
+        document.getElementById('playerName').textContent = playerName;
+    </script>
+</body>
+</html>

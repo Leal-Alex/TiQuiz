@@ -367,10 +367,8 @@ function endGame() {
 
   // Verificar pontuação e redirecionar
   if (score >= 2) {
-    alert('Você ganhou!');
     window.location.href = 'won.html';
   } else {
-    alert('Você perdeu!');
     window.location.href = 'lost.html';
   }
 
