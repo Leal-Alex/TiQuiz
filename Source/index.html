@@ -11,13 +11,20 @@
     <h1 class="title">TiQuiz!</h1>
     <div class="container">
         <div class="input-container">
-            <input type="text" placeholder="Digite o seu nome">
+            <input type="text" id="playerName" placeholder="Digite o seu nome">
         </div>
-        <a class="play-button" href="game.html">Jogar</a>
+        <a class="play-button" href="game.html" onclick="savePlayerName()">Jogar</a>
     </div>
 
     <footer class="footer">
         <p>Desenvolvido por Diogo Leal - 1° Semestre &copy; 2023</p>
     </footer>
+
+    <script>
+        function savePlayerName() {
+            var playerName = document.getElementById('playerName').value;
+            localStorage.setItem('playerName', playerName);
+        }
+    </script>
 </body>
 </html>

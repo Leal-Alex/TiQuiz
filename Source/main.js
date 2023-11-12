@@ -93,8 +93,8 @@ const questions = [
     {
         image: '../Imagens_PP/bluetooth.jpg',
         question: 'O que é Bluetooth?',
-        answers: ['Uma marca de refrigerantes', 'Uma tecnologia de conexão sem fio para dispositivos', 'Um tipo de música', 'Uma rede social'],
-        correctAnswer: 'Uma tecnologia de conexão sem fio para dispositivos'
+        answers: ['Uma marca de refrigerantes', 'Uma tecnologia de conexão sem fio', 'Um tipo de música', 'Uma rede social'],
+        correctAnswer: 'Uma tecnologia de conexão sem fio'
     },
     {
         image: '../Imagens_PP/email.jpg',
@@ -174,13 +174,15 @@ const descriptionContainer = document.querySelector('.description-container');
 const answerContainers = document.querySelectorAll('.answer-choice');
 const playAgainButton = document.getElementById('play-again');
 const scoreElement = document.getElementById('score');
+document.getElementById('playerName').textContent = localStorage.getItem('playerName');
 
 // Variáveis do jogo
 let currentQuestions = [];
 let currentQuestionIndex = 0;
-let timeLeft = 30; // Tempo inicial (30 segundos)
+let timeLeft = 15; // Tempo inicial (30 segundos)
 let timerInterval;
 let score = 0;
+
 
 // Função para embaralhar as perguntas
 function shuffleQuestions() {
@@ -211,7 +213,7 @@ function loadNextQuestion() {
     }
 
     // Atualizar o temporizador
-    timeLeft = 30;
+    timeLeft = 15;
     timerElement.textContent = timeLeft;
 
     clearInterval(timerInterval);
@@ -236,45 +238,57 @@ function updateTimer() {
 
 // Função para verificar a resposta selecionada
 function checkAnswer(answer) {
-    const currentQuestion = currentQuestions[currentQuestionIndex - 1];
-  
-    let confirmationMessages = [
-      'Correto!',
-      'Impressionante!',
-      'Excelente!',
-      'Você está arrasando!',
-      'Uau, essa foi genial!',
-      'Dessa vez você caprichou!'
-      // Adicione mais mensagens conforme necessário
-    ];
-  
-    let errorMessages = [
-      'Não foi dessa vez!',
-      'Errou, essa estava difícil',
-      'Tente novamente na próxima!',
-      'Você quase acertou!',
-      'Não desanime, continue tentando!'
-      // Adicione mais mensagens conforme necessário
-    ];
-  
-    let confirmationMessage;
-  
-    if (answer === currentQuestion.correctAnswer) {
-      score++; // Aumenta o contador de acertos se a resposta for correta
-      confirmationMessage = confirmationMessages[Math.floor(Math.random() * confirmationMessages.length)];
-    } else {
-      confirmationMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
-    }
-  
-    // Exibir confirmação
-    descriptionContainer.innerHTML = `<p>${confirmationMessage}</p>`;
-  
-    // Aguardar por alguns segundos antes de carregar a próxima pergunta
-    setTimeout(() => {
-      descriptionContainer.innerHTML = ''; // Limpar a descrição
-      loadNextQuestion();
-    }, 2000); // Tempo em milissegundos (2 segundos)
+  const currentQuestion = currentQuestions[currentQuestionIndex - 1];
+
+  let confirmationMessages = [
+    'Correto!',
+    'Impressionante!',
+    'Excelente!',
+    'Você está arrasando!',
+    'Uau, essa foi genial!',
+    'Dessa vez você caprichou!'
+    // Adicione mais mensagens conforme necessário
+  ];
+
+  let errorMessages = [
+    'Não foi dessa vez!',
+    'Errou, essa estava difícil',
+    'Tente novamente na próxima!',
+    'Você quase acertou!',
+    'Não desanime, continue tentando!'
+    // Adicione mais mensagens conforme necessário
+  ];
+
+  let confirmationMessage;
+  let isErrorMessage = false;
+
+  if (answer === currentQuestion.correctAnswer) {
+    score++; // Aumenta o contador de acertos se a resposta for correta
+    confirmationMessage = confirmationMessages[Math.floor(Math.random() * confirmationMessages.length)];
+  } else {
+    isErrorMessage = true;
+    confirmationMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
   }
+
+  // Atualizar o temporizador
+  timeLeft = 15;
+  timerElement.textContent = timeLeft;
+
+  clearInterval(timerInterval);
+  timerInterval = setInterval(updateTimer, 1000);
+
+  // Atualizar o contador de acertos
+  scoreElement.textContent = score;
+
+  // Exibir confirmação com estilo de cor
+  descriptionContainer.innerHTML = `<p style="color: ${isErrorMessage ? 'red' : 'white'};">${confirmationMessage}</p>`;
+
+  // Aguardar por alguns segundos antes de carregar a próxima pergunta
+  setTimeout(() => {
+    descriptionContainer.innerHTML = ''; // Limpar a descrição
+    loadNextQuestion();
+  }, 2000); // Tempo em milissegundos (2 segundos)
+}
   
 
 // Função para estilizar e centralizar o botão "Tentar Novamente"

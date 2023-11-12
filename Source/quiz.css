@@ -31,13 +31,17 @@ body {
 
 .score-container {
     position: absolute;
-    top: 200px;
-    left: 200px;
-    background: url('') no-repeat;
-    background-size: contain;
-    color: #fff;
+    top: 250px;
+    left: 90px;
+    color: #ffffff;
     font-size: 24px;
-    padding: 10px;
+    background-color: #2a0d4d;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 10 10 15px rgba(0, 0, 0, 0.5);
+    max-width: 350px;
+    width: 100%;
 }
 
 .question-container {
