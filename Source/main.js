@@ -316,7 +316,7 @@ function checkAnswer(answer) {
     isErrorMessage = true;
     confirmationMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
     // Use uma imagem de erro
-    imageContainer.innerHTML = `<img class="image" src="../Imagens_PP/errado.gif" alt="Imagem de Erro">`;
+    imageContainer.innerHTML = `<img class="image" src="../Imagens_PP/errado.jpg" alt="Imagem de Erro">`;
   }
 
   // Ocultar timer
@@ -357,7 +357,7 @@ function checkAnswer(answer) {
 
     descriptionContainer.innerHTML = ''; // Limpar a descrição
     loadNextQuestion();
-  }, 7200); // Tempo em milissegundos (7 segundos)
+  }, 4000); // Tempo em milissegundos (7 segundos)
 }
   
 
