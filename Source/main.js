@@ -291,8 +291,14 @@ function checkAnswer(answer) {
     'Excelente!',
     'Você está arrasando!',
     'Uau, essa foi genial!',
-    'Dessa vez você caprichou!'
-    // Adicione mais mensagens conforme necessário
+    'Dessa vez você caprichou!',
+    'Baita QI!',
+    'Na mosca!',
+    'Exato!',
+    'Dev é você?',
+    'Você não erra uma!',
+    'Impressionante Calabreso!',
+    'Ta dando um show Ludmilo!'
   ];
 
   let errorMessages = [
@@ -300,8 +306,11 @@ function checkAnswer(answer) {
     'Errou, essa estava difícil',
     'Tente novamente na próxima!',
     'Você quase acertou!',
-    'Não desanime, continue tentando!'
-    // Adicione mais mensagens conforme necessário
+    'Não desanime, continue tentando!',
+    'Nem o dev sabia essa!',
+    'Errado!',
+    'Resposta E... Errada!',
+    'Passou perto!'
   ];
 
   let confirmationMessage;
