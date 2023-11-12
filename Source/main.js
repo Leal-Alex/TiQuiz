@@ -291,26 +291,17 @@ function checkAnswer(answer) {
     'Excelente!',
     'Você está arrasando!',
     'Uau, essa foi genial!',
-    'Dessa vez você caprichou!',
-    'Baita QI!',
-    'Na mosca!',
-    'Exato!',
-    'Dev é você?',
-    'Você não erra uma!',
-    'Impressionante Calabreso!',
-    'Ta dando um show Ludmilo!'
+    'Dessa vez você caprichou!'
+    // Adicione mais mensagens conforme necessário
   ];
 
   let errorMessages = [
     'Não foi dessa vez!',
-    'Errou, essa estava difícil!',
+    'Errou, essa estava difícil',
     'Tente novamente na próxima!',
     'Você quase acertou!',
-    'Não desanime, continue tentando!',
-    'Nem o dev sabia essa!',
-    'Errado!',
-    'Resposta E... Errada!',
-    'Passou perto!'
+    'Não desanime, continue tentando!'
+    // Adicione mais mensagens conforme necessário
   ];
 
   let confirmationMessage;
@@ -319,9 +310,22 @@ function checkAnswer(answer) {
   if (answer === currentQuestion.correctAnswer) {
     score++; // Aumenta o contador de acertos se a resposta for correta
     confirmationMessage = confirmationMessages[Math.floor(Math.random() * confirmationMessages.length)];
+    // Use uma imagem de acerto
+    imageContainer.innerHTML = `<img class="image" src="../Imagens_PP/correto.png" alt="Imagem de Acerto">`;
   } else {
     isErrorMessage = true;
     confirmationMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
+    // Use uma imagem de erro
+    imageContainer.innerHTML = `<img class="image" src="../Imagens_PP/errado.gif" alt="Imagem de Erro">`;
+  }
+
+  // Ocultar timer
+  timerElement.style.display = 'none';
+
+  // Ocultar questionContainer e respostas
+  questionContainer.style.display = 'none';
+  for (let i = 0; i < answerContainers.length; i++) {
+    answerContainers[i].style.display = 'none';
   }
 
   // Atualizar o temporizador
@@ -337,11 +341,23 @@ function checkAnswer(answer) {
   // Exibir confirmação com estilo de cor
   descriptionContainer.innerHTML = `<p style="color: ${isErrorMessage ? 'red' : 'white'};">${confirmationMessage}</p>`;
 
-  // Aguardar por alguns segundos antes de carregar a próxima pergunta
+  // Aguardar por alguns segundos antes de exibir a próxima pergunta
   setTimeout(() => {
+    // Exibir timer
+    timerElement.style.display = 'block';
+
+    // Exibir questionContainer e respostas novamente
+    questionContainer.style.display = 'block';
+    for (let i = 0; i < answerContainers.length; i++) {
+      answerContainers[i].style.display = 'block';
+    }
+
+    // Exibir imagem padrão
+    imageContainer.innerHTML = `<img class="image" src="${currentQuestion.image}" alt="Imagem da pergunta">`;
+
     descriptionContainer.innerHTML = ''; // Limpar a descrição
     loadNextQuestion();
-  }, 2000); // Tempo em milissegundos (2 segundos)
+  }, 7200); // Tempo em milissegundos (7 segundos)
 }
   
 
