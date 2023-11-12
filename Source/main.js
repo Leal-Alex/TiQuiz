@@ -161,9 +161,43 @@ const questions = [
         question: 'O que é RAM?',
         answers: ['Memória de acesso aleatório', 'Rádio AM', 'Refrigerante', 'Moda'],
         correctAnswer: 'Memória de acesso aleatório'
-    }
-
-  
+    },
+    {
+        image: '../Imagens_PP/BjarneStroustrup.jpg',
+        question: 'Qual é o criador da linguagem de programação C++?',
+        answers: ['Dennis Ritchie', 'Bjarne Stroustrup', 'Guido van Rossum', 'James Gosling'],
+        correctAnswer: 'Bjarne Stroustrup'
+    },
+    {
+        image: '../Imagens_PP/linux.jpg',
+        question: 'Quem é o criador do kernel do Linux?',
+        answers: ['Linus Torvalds', 'Richard Stallman', 'Andrew Tanenbaum', 'Mark Shuttleworth'],
+        correctAnswer: 'Linus Torvalds'
+    },
+    {
+        image: '../Imagens_PP/github.jpg',
+        question: 'Qual é a plataforma mais popular para hospedar projetos de código aberto?',
+        answers: ['GitLab', 'Bitbucket', 'SourceForge', 'GitHub'],
+        correctAnswer: 'GitHub'
+    },
+    {
+        image: '../Imagens_PP/python.jpg',
+        question: 'Qual é a filosofia principal por trás da linguagem de programação Python?',
+        answers: ['Zen do Python', 'Princípios de Python', 'Doutrina Pythonista', 'Código Pythonico'],
+        correctAnswer: 'Zen do Python'
+    },
+    {
+        image: '../Imagens_PP/bitcoin.jpg',
+        question: 'O que é Bitcoin?',
+        answers: ['Uma rede social', 'Uma criptomoeda', 'Um tipo de malware', 'Um sistema operacional'],
+        correctAnswer: 'Uma criptomoeda'
+    },
+    {
+        image: '../Imagens_PP/sql.jpg',
+        question: 'Qual é a finalidade do SQL?',
+        answers: ['Linguagem de programação', 'Sistema operacional', 'Gestão de banco de dados', 'Editor de texto'],
+        correctAnswer: 'Gestão de banco de dados'
+    },
 ];
 
 // Elementos da DOM
@@ -192,6 +226,14 @@ function shuffleQuestions() {
   }
 }
 
+// Função para embaralhar as alternativas
+function shuffleAnswers(answers) {
+  for (let i = answers.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [answers[i], answers[j]] = [answers[j], answers[i]];
+  }
+}
+
 // Função para carregar as próximas 3 perguntas
 function loadNextQuestions() {
   currentQuestions = questions.slice(0, 3); // Seleciona as próximas 3 perguntas
@@ -207,6 +249,9 @@ function loadNextQuestion() {
     questionContainer.innerHTML = `<h2>${currentQuestion.question}</h2>`;
     imageContainer.innerHTML = `<img class="image" src="${currentQuestion.image}" alt="Imagem da pergunta">`;
     descriptionContainer.innerHTML = '';
+
+    // Embaralhar as alternativas
+    shuffleAnswers(currentQuestion.answers);
 
     for (let i = 0; i < answerContainers.length; i++) {
       answerContainers[i].textContent = currentQuestion.answers[i];
@@ -246,17 +291,26 @@ function checkAnswer(answer) {
     'Excelente!',
     'Você está arrasando!',
     'Uau, essa foi genial!',
-    'Dessa vez você caprichou!'
-    // Adicione mais mensagens conforme necessário
+    'Dessa vez você caprichou!',
+    'Baita QI!',
+    'Na mosca!',
+    'Exato!',
+    'Dev é você?',
+    'Você não erra uma!',
+    'Impressionante Calabreso!',
+    'Ta dando um show Ludmilo!'
   ];
 
   let errorMessages = [
     'Não foi dessa vez!',
-    'Errou, essa estava difícil',
+    'Errou, essa estava difícil!',
     'Tente novamente na próxima!',
     'Você quase acertou!',
-    'Não desanime, continue tentando!'
-    // Adicione mais mensagens conforme necessário
+    'Não desanime, continue tentando!',
+    'Nem o dev sabia essa!',
+    'Errado!',
+    'Resposta E... Errada!',
+    'Passou perto!'
   ];
 
   let confirmationMessage;
