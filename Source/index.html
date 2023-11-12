@@ -11,20 +11,33 @@
     <h1 class="title">TiQuiz!</h1>
     <div class="container">
         <div class="input-container">
-            <input type="text" id="playerName" placeholder="Digite o seu nome">
+            <input type="text" id="playerName" placeholder="Digite o seu nome" required>
         </div>
-        <a class="play-button" href="game.html" onclick="savePlayerName()">Jogar</a>
+        <a class="play-button" href="#" onclick="startGame()">Jogar</a>
     </div>
 
     <footer class="footer">
         <p>Desenvolvido por Diogo Leal - 1° Semestre &copy; 2023</p>
     </footer>
-
     <script>
-        function savePlayerName() {
+        function startGame() {
             var playerName = document.getElementById('playerName').value;
-            localStorage.setItem('playerName', playerName);
+    
+            // Verificar se o jogador digitou um nome
+            if (playerName.trim() === "") {
+                alert("Por favor, digite o seu nome antes de jogar.");
+            } else {
+                localStorage.setItem('playerName', playerName);
+                window.location.href = 'game.html';
+            }
         }
+    
+        // Adicionar evento de escuta para a tecla "Enter"
+        document.getElementById('playerName').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                startGame();
+            }
+        });
     </script>
 </body>
 </html>
