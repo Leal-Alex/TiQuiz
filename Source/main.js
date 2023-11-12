@@ -291,46 +291,20 @@ function checkAnswer(answer) {
 }
   
 
-// Função para estilizar e centralizar o botão "Tentar Novamente"
-function styleAndCenterPlayAgainButton() {
-  playAgainButton.style.display = 'block';
-  playAgainButton.style.margin = '0 auto';
-  playAgainButton.style.padding = '10px 20px';
-  playAgainButton.style.fontSize = '24px';
-}
-
 // Função para encerrar o jogo
 function endGame() {
   clearInterval(timerInterval);
 
-  questionContainer.innerHTML = ''; // Remover a seção da pergunta
-  imageContainer.innerHTML = '';
-  descriptionContainer.innerHTML = 'Fim do Jogo!';
-
-  for (let i = 0; i < answerContainers.length; i++) {
-    answerContainers[i].textContent = '';
-  }
-
   // Verificar pontuação e redirecionar
   if (score >= 2) {
     alert('Você ganhou!');
-    window.location.href = 'vencedor.html';
+    window.location.href = 'won.html';
   } else {
     alert('Você perdeu!');
-    window.location.href = 'perdedor.html';
+    window.location.href = 'lost.html';
   }
 
-  styleAndCenterPlayAgainButton();
 }
-
-// Evento de clique para jogar novamente
-playAgainButton.addEventListener('click', () => {
-  currentQuestionIndex = 0;
-  score = 0; // Reiniciar pontuação
-  loadNextQuestions();
-  descriptionContainer.innerHTML = ''; // Limpar a descrição
-  playAgainButton.style.display = 'none';
-});
 
 // Evento de clique para respostas
 for (let i = 0; i < answerContainers.length; i++) {
