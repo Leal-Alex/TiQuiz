@@ -34,12 +34,11 @@ body {
     top: 250px;
     left: 90px;
     color: #ffffff;
-    font-size: 24px;
-    background-color: #2a0d4d;
+    font-size: 38px;
+    background-color: #230a42;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    box-shadow: 10 10 15px rgba(0, 0, 0, 0.5);
     max-width: 350px;
     width: 100%;
 }
