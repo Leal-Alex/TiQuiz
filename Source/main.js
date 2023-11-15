@@ -367,7 +367,7 @@ function checkAnswer(answer) {
 
     descriptionContainer.innerHTML = ''; // Limpar a descrição
     loadNextQuestion();
-  }, 4000); // Tempo em milissegundos (7 segundos)
+  }, 4000); // Tempo em milissegundos (4 segundos)
 }
   
 
