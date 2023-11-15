@@ -1,4 +1,4 @@
-// Definir perguntas, cada pergunta é um objeto com uma imagem, a pergunta e as alternativas
+// Cada pergunta é um objeto com uma imagem, a pergunta e as alternativas
 const questions = [
     {
         image: '../Imagens_PP/alanturing.jpg',
