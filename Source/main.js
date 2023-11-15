@@ -278,7 +278,7 @@ function updateTimer() {
 
   if (timeLeft <= 0) {
     clearInterval(timerInterval);
-    endGame(); // Encerra o jogo quando o tempo se esgota
+    loadNextQuestions();
   }
 }
 
