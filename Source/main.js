@@ -320,7 +320,7 @@ function checkAnswer(answer) {
     score++; // Aumenta o contador de acertos se a resposta for correta
     confirmationMessage = confirmationMessages[Math.floor(Math.random() * confirmationMessages.length)];
     // Use uma imagem de acerto
-    imageContainer.innerHTML = `<img class="image" src="../Imagens_PP/correto.png" alt="Imagem de Acerto">`;
+    imageContainer.innerHTML = `<img class="image" src="../Imagens_PP/correto.webp" alt="Imagem de Acerto">`;
   } else {
     isErrorMessage = true;
     confirmationMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
