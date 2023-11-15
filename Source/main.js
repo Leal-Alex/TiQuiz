@@ -213,9 +213,10 @@ document.getElementById('playerName').textContent = localStorage.getItem('player
 // Variáveis do jogo
 let currentQuestions = [];
 let currentQuestionIndex = 0;
-let timeLeft = 15; // Tempo inicial (30 segundos)
+let timeLeft = 15; 
 let timerInterval;
 let score = 0;
+let totalQuestions = 0;
 
 
 // Função para embaralhar as perguntas
@@ -236,37 +237,37 @@ function shuffleAnswers(answers) {
 
 // Função para carregar as próximas 3 perguntas
 function loadNextQuestions() {
-  currentQuestions = questions.slice(0, 3); // Seleciona as próximas 3 perguntas
-  shuffleQuestions(); // Embaralha todas as perguntas para a próxima rodada
+  currentQuestions = questions.slice(0, 3);
+  totalQuestions = currentQuestions.length; 
+  shuffleQuestions();
   loadNextQuestion();
 }
 
 // Função para carregar a próxima pergunta
 function loadNextQuestion() {
   if (currentQuestionIndex < currentQuestions.length) {
-    const currentQuestion = currentQuestions[currentQuestionIndex];
+      const currentQuestion = currentQuestions[currentQuestionIndex];
 
-    questionContainer.innerHTML = `<h2>${currentQuestion.question}</h2>`;
-    imageContainer.innerHTML = `<img class="image" src="${currentQuestion.image}" alt="Imagem da pergunta">`;
-    descriptionContainer.innerHTML = '';
+      // Adiciona a contagem da pergunta atual ao questionCounter
+      document.getElementById('questionCounter').textContent = `${currentQuestionIndex + 1}/${totalQuestions}`;
 
-    // Embaralhar as alternativas
-    shuffleAnswers(currentQuestion.answers);
+      questionContainer.innerHTML = `<h2>${currentQuestion.question}</h2>`;
+      imageContainer.innerHTML = `<img class="image" src="${currentQuestion.image}" alt="Imagem da pergunta">`;
+      descriptionContainer.innerHTML = '';
 
-    for (let i = 0; i < answerContainers.length; i++) {
-      answerContainers[i].textContent = currentQuestion.answers[i];
-    }
+      for (let i = 0; i < answerContainers.length; i++) {
+          answerContainers[i].textContent = currentQuestion.answers[i];
+      }
 
-    // Atualizar o temporizador
-    timeLeft = 15;
-    timerElement.textContent = timeLeft;
+      timeLeft = 15;
+      timerElement.textContent = timeLeft;
 
-    clearInterval(timerInterval);
-    timerInterval = setInterval(updateTimer, 1000);
+      clearInterval(timerInterval);
+      timerInterval = setInterval(updateTimer, 1000);
 
-    currentQuestionIndex++;
+      currentQuestionIndex++;
   } else {
-    endGame(); // Encerra o jogo se não houver mais perguntas
+      endGame();
   }
 }
 
