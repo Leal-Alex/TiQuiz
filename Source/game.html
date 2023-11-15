@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../Imagens_PP/decode.png">
     <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+
     <title>TiQuiz</title>
 </head>
 <body>
     <div class="timer">15</div>
     <div class="score-container">
-        <span class="question-counter" id="questionCounter"></span>
-        <br>
-        <span id="playerName"></span>
-        <br>
-        Acertos: <span id="score">0</span>
+        <div class="question-counter">
+            <i class="fas fa-question-circle"></i>
+            <span id="questionCounter"></span>
+        </div>
+        <div id="playerName"></div>
+        <div class="score">
+            <i class="fas fa-star"></i>
+            <span id="score">0</span>
+        </div>
     </div>
+    
     <div class="question-container">
         <h2>Tipo</h2>
     </div>

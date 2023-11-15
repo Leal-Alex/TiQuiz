@@ -41,6 +41,16 @@ body {
     text-align: center;
     max-width: 350px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.score-container:hover {
+    transform: scale(1.1);
 }
 
 .question-container {
