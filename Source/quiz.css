@@ -49,6 +49,11 @@ body {
     transition: transform 0.3s;
 }
 
+.question-counter{
+	text-align: center;
+	font-size: 32px;
+}
+
 .score-container:hover {
     transform: scale(1.1);
 }
