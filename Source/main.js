@@ -250,7 +250,7 @@ function loadNextQuestion() {
 
       // Adiciona a contagem da pergunta atual ao questionCounter
       document.getElementById('questionCounter').textContent = `${currentQuestionIndex + 1}/${totalQuestions}`;
-
+      shuffleAnswers(currentQuestion.answers);
       questionContainer.innerHTML = `<h2>${currentQuestion.question}</h2>`;
       imageContainer.innerHTML = `<img class="image" src="${currentQuestion.image}" alt="Imagem da pergunta">`;
       descriptionContainer.innerHTML = '';
