@@ -226,7 +226,7 @@ function shuffleQuestions() {
     [questions[i], questions[j]] = [questions[j], questions[i]];
   }
 }
-
+//teste de gitdcc
 // Função para embaralhar as alternativas
 function shuffleAnswers(answers) {
   for (let i = answers.length - 1; i > 0; i--) {
