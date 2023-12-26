@@ -218,7 +218,6 @@ let timerInterval;
 let score = 0;
 let totalQuestions = 0;
 
-
 // Função para embaralhar as perguntas
 function shuffleQuestions() {
   for (let i = questions.length - 1; i > 0; i--) {
@@ -226,7 +225,7 @@ function shuffleQuestions() {
     [questions[i], questions[j]] = [questions[j], questions[i]];
   }
 }
-//teste de gitdcc
+
 // Função para embaralhar as alternativas
 function shuffleAnswers(answers) {
   for (let i = answers.length - 1; i > 0; i--) {
